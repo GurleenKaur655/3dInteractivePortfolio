@@ -5,55 +5,51 @@ import github from './github.svg'
 import html from './html.svg'
 import javascript from './javascript.svg'
 import mongodb from './mongodb.svg'
-import motion from './motion.svg'
-import mui from './mui.svg'
-import nextjs from './nextjs.svg'
 import nodejs from './nodejs.svg'
 import react from './react.svg'
-import redux from './redux.svg'
-import sass from './sass.svg'
 import tailwindcss from './tailwindcss.svg'
 import typescript from './typescript.svg'
 import linkedin from './linkedin.svg'
-import twitter from './twitter.svg'
-import car from './car.svg'
-import estate from './estate.svg'
-import pricewise from './pricewise.svg'
-import snapgram from './snapgram.svg'
-import summiz from './summiz.svg'
-import threads from './threads.svg'
 import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import csharp from './csharp.svg'
+import Java from './Java.svg'
+import ASP from './asp.svg'
+import springBoot from './SpringBoot.svg'
+import sql from './Sql.svg'
+import Figma from './Figma.svg'
+import Bootstrap from './Bootstrap.svg'
+import AngularJS from './AngularJS.svg'
+import Swagger from './Swagger.svg'
+import Jira from './Jira.svg'
 
 export {
+    springBoot, 
+    sql,
+    Figma,
+    Bootstrap,
+    AngularJS,
+    Swagger,
+    Jira,
     css,
+    csharp,
     express,
     git,
     github,
     html,
     javascript,
     mongodb,
-    motion,
-    mui,
-    nextjs,
     nodejs,
     react,
-    redux,
-    sass,
     tailwindcss,
     typescript,
     linkedin,
-    twitter,
-    car,
-    estate,
-    pricewise,
-    snapgram,
-    summiz,
-    threads,
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    Java,
+    ASP
 }
