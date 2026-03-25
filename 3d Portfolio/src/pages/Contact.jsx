@@ -1,8 +1,9 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
+import * as THREE from 'three'
 
-import Fox from "../models/fox";
+import Unicorn from "../models/Unicorn";
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alert"
 import Loader from "../components/Loader";
@@ -12,19 +13,19 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const [currentAnimation, setCurrentAnimation] = useState("Armature|Walking_01");
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleFocus = () => setCurrentAnimation("walk");
-  const handleBlur = () => setCurrentAnimation("idle");
+  const handleFocus = () => setCurrentAnimation("Armature|RUNFIN");
+  const handleBlur = () => setCurrentAnimation("Armature|Walking_01");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setCurrentAnimation("hit");
+    setCurrentAnimation("Armature|FinAction(Run&UP)");
 
     emailjs
       .send(
@@ -50,7 +51,7 @@ const Contact = () => {
 
           setTimeout(() => {
             hideAlert(false);
-            setCurrentAnimation("idle");
+            setCurrentAnimation("Armature|PoseLib");
             setForm({
               name: "",
               email: "",
@@ -61,7 +62,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-          setCurrentAnimation("idle");
+          setCurrentAnimation("Armature|Walking_01");
 
           showAlert({
             show: true,
@@ -138,18 +139,18 @@ const Contact = () => {
         </form>
       </div>
 
-      <div className='lg:w-1/2 w-full lg:h-auto md:h-137.5 h-87.5'>
-        <Canvas
+      <div className='lg:w-1/2 w-full lg:h-150 h-112.5'>
+        <Canvas gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.5 }}
           camera={{
-            position: [0, 0, 5],
+            position: [0, 0, 6],
             fov: 75,
             near: 0.1,
             far: 1000,
           }}
         >
-          <directionalLight position={[0, 0, 1]} intensity={2.5} />
-          <ambientLight intensity={1} />
-          <pointLight position={[5, 10, 0]} intensity={2} />
+          <directionalLight position={[0, 9, 9]} intensity={2} />
+          <ambientLight intensity={0.5} />
+          <pointLight position={[5, 5, 5]} intensity={2} />
           <spotLight
             position={[10, 10, 10]}
             angle={0.15}
@@ -158,10 +159,10 @@ const Contact = () => {
           />
 
           <Suspense fallback={<Loader />}>
-            <Fox
+            <Unicorn
               currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
+              position={[0.5, -0.999, 0]}
+              rotation={[0.3, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
           </Suspense>
