@@ -5,20 +5,16 @@ import { socialLinks } from "../constants";
 const Footer = () => {
   return (
     <footer className='footer font-poppins'>
-      <hr className='border-slate-200' />
+      <hr className='border-pink-600 shadow' />
 
-      <div className='footer-container'>
-        <p>
-          © 2023 <strong>Adrian Hajdin</strong>. All rights reserved.
-        </p>
-
-        <div className='flex gap-3 justify-center items-center'>
+      <div className='footer-container w-full'>
+        <div className='flex justify-center'>
           {socialLinks.map((link) => (
             <Link key={link.name} to={link.link} target='_blank'>
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className='w-6 h-6 object-contain'
+                className='w-10 h-10 object-contain m-1'
               />
             </Link>
           ))}

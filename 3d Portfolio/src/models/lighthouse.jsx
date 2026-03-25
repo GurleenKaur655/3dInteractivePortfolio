@@ -13,6 +13,12 @@ isRotating, setIsRotating, setCurrentStage, ...props
     const rotationSpeed = useRef(0);
     const dampingFactor = 0.95;
 
+     useFrame((_, delta) => {
+      if(isRotating) {
+        lighthouseRef.current.rotation.y -= 0.50 * delta; 
+      }
+    })
+
     const handlePointerDown = (e) => {
         e.stopPropagation();
         e.preventDefault();

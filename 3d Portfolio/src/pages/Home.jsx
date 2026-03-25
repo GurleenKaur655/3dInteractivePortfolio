@@ -22,7 +22,7 @@ const Home = () => {
   const adjustLighthouseForScreenSize = () => {
     let screenScale
     let screenPosition = [0, -6.5, -43]
-    let rotation = [0.1, 4.7, 0]
+    // let rotation = [0.1, 4.7, 0]
 
     if (window.innerWidth < 768) {
       screenScale = [0.065, 0.065, 0.065]
@@ -30,18 +30,18 @@ const Home = () => {
       screenScale = [0.07, 0.07, 0.07]
     }
 
-    setLighthouseTransform([screenScale, screenPosition, rotation])
+    setLighthouseTransform([screenScale, screenPosition])
   }
 
   const adjustPlaneForScreenSize = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.075 ,0.075, 0.075]
-      screenPosition = [0, -1.5, 0]
+      screenScale = [0.0999 ,0.0999, 0.0999]
+      screenPosition = [0, -0.4, 0]
     } else {
-      screenScale = [0.09, 0.09, 0.09];
-      screenPosition = [0, -4, -4]
+      screenScale = [0.11, 0.11, 0.11];
+      screenPosition = [0, -0.4, 0]
     }
 
      setPlaneTransform([screenScale, screenPosition])
@@ -62,7 +62,7 @@ const Home = () => {
     return () => window.removeEventListener("resize", adjustPlaneForScreenSize)
   }, [])
 
-  const [lighthouseScale, lighthousePosition, lighthouseRotation] = lighthouseTransform
+  const [lighthouseScale, lighthousePosition] = lighthouseTransform
     const [planeScale, planePosition] = planeTransform
 
   return (
@@ -77,8 +77,6 @@ const Home = () => {
 
         <Suspense fallback={<Loader />}>
           <directionalLight position={[5, 5, 5]} intensity={2} />
-      
-          {/* Ambient so nothing is completely black */}
           <ambientLight intensity={0.5} />
 
           <Sky isRotating={isRotating} />
@@ -88,15 +86,15 @@ const Home = () => {
           <Lighthouse
             position={lighthousePosition}
             scale={lighthouseScale}
-            rotation={lighthouseRotation}
             isRotating={isRotating}
+            rotation={[0.1, 4.7077, 0]}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
           />
           <Plane
             isRotating={isRotating}
             scale={planeScale}
-            postion={planePosition}
+            position={planePosition}
             rotation={[0, 20.5, 0]} />
           {/* it will take some time to load the 3d project hence a fallback to show instead */}
         </Suspense>
