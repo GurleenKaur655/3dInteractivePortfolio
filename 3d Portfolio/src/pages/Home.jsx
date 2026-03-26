@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
+import { soundoff, soundon } from "../assets/icons";
 import Loader from '../components/Loader'
+
+import ocean from "../assets/ocean.mp3";
 
 
 import Lighthouse from '../models/lighthouse'
@@ -12,22 +15,35 @@ import HomeInfo from '../components/HomeInfo'
 
 
 const Home = () => {
+  const audioRef = useRef(new Audio(ocean));
+  audioRef.current.volume = 0.4;
+  audioRef.current.loop = true;
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [lighthouseTransform, setLighthouseTransform] = useState([null, null, null])
   const [planeTransform, setPlaneTransform] = useState([null, null])
+   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
+
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
 
   const adjustLighthouseForScreenSize = () => {
     let screenScale
-    let screenPosition = [0, -6.5, -43]
+    let screenPosition = [0, -7.5, -43]
     // let rotation = [0.1, 4.7, 0]
 
     if (window.innerWidth < 768) {
-      screenScale = [0.065, 0.065, 0.065]
+      screenScale = [0.070, 0.070, 0.070]
     } else {
-      screenScale = [0.07, 0.07, 0.07]
+      screenScale = [0.078, 0.078, 0.078]
     }
 
     setLighthouseTransform([screenScale, screenPosition])
@@ -99,6 +115,14 @@ const Home = () => {
           {/* it will take some time to load the 3d project hence a fallback to show instead */}
         </Suspense>
       </Canvas>
+       <div className='absolute bottom-2 left-2'>
+        <img
+          src={!isPlayingMusic ? soundoff : soundon}
+          alt='jukebox'
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+          className='w-10 h-10 cursor-pointer object-contain'
+        />
+      </div>
     </section>
   )
 }

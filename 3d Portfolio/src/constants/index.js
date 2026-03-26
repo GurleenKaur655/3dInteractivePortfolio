@@ -145,7 +145,7 @@ export const projects = [
         title: "Real-Time Multiplayer Quiz Game",
         skills: "Angular, TypeScript, Node.js, Express.js, Socket.IO(WebSocket), BootStrap, REST APIs",
         description: "A real-time multiplayer quiz game where players can join rooms, answer timed questions, and compete with live score updates. Includes dynamic gameplay features like automatic scoring, timers, and winner detection for an interactive experience.",
-        url: ""
+        url: "https://youtu.be/mt_QIT_4Ocs"
     },
     {
         cover: Portfolio,
