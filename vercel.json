@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --prefix \"3d Portfolio\"",
+  "buildCommand": "npm --prefix \"3d Portfolio\" run build",
+  "outputDirectory": "3d Portfolio/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
