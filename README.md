@@ -101,7 +101,7 @@ Then open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Credits
 
-This project was inspired by JavaScript Master's tutorial on YouTube.
+This project was inspired by JavaScript Mastery's tutorial on YouTube.
 
 Original tutorial: [YouTube link](https://www.youtube.com/watch?v=FkowOdMjvYo&t=204s)
 
