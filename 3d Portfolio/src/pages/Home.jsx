@@ -103,7 +103,7 @@ const Home = () => {
             position={lighthousePosition}
             scale={lighthouseScale}
             isRotating={isRotating}
-            rotation={[0.1, 4.7077, 0]}
+            rotation={[0.1, 4.707, 0]}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
           />

@@ -15,7 +15,7 @@ isRotating, setIsRotating, setCurrentStage, ...props
 
      useFrame((_, delta) => {
       if(isRotating) {
-        lighthouseRef.current.rotation.y -= 0.50 * delta; 
+        lighthouseRef.current.rotation.y -= 0.2 * delta; 
       }
     })
 
