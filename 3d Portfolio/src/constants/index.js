@@ -153,7 +153,7 @@ export const projects = [
         title: "Recipe Management Website",
         skills: "C#, ASP.NET MVC, SQL Server, JavaScript, Bootstrap, HTML",
         description: "A recipe management web application where users can create, edit, and browse recipes with features like filtering, pagination, and image uploads. Includes admin approval and role-based access to manage content.",
-        url: ""
+        url: "https://youtu.be/jfxInu5p8C0?si=MdMEtuC5FbP1oPKk"
     },
     {
         cover: Portfolio,
