@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <header className="header">
         <NavLink to="/" className="w-10 h-10 items-center justify-center flex font-bold ">
-            <p className="pink-gradient_text text-2xl">Home</p>
+            <p className="pink-gradient_text text-3xl sm:text-4xl">Home</p>
         </NavLink>
-        <nav className='flex text-lg gap-7 font-medium'>
+        <nav className='flex text-xl sm:text-2xl gap-8 font-medium'>
         <NavLink to='/about' className={({ isActive }) => isActive ? "text-pink-600" : "text-black" }>
           About
         </NavLink>

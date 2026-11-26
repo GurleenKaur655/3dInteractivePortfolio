@@ -24,6 +24,8 @@ import Bootstrap from './Bootstrap.svg'
 import AngularJS from './AngularJS.svg'
 import Swagger from './Swagger.svg'
 import Jira from './Jira.svg'
+import python from './python.svg'
+import pytorch from './pytorch.svg'
 
 export {
     springBoot, 
@@ -51,5 +53,7 @@ export {
     soundon,
     soundoff,
     Java,
-    ASP
+    ASP, 
+    python,
+    pytorch
 }

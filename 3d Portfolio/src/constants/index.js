@@ -8,7 +8,6 @@ import {
     html,
     javascript,
     linkedin,
-    mongodb,
     nodejs,
     react,
     tailwindcss,
@@ -18,10 +17,11 @@ import {
     springBoot,
     sql,
     Figma,
-    Bootstrap,
     AngularJS,
     Swagger,
-    Jira
+    Jira,
+    python,
+    pytorch
 } from "../assets/icons";
 
 import {
@@ -74,11 +74,6 @@ export const skills = [
         type: "Backend",
     },
     {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
-    },
-    {
         imageUrl: html,
         name: "HTML",
         type: "Frontend",
@@ -86,11 +81,6 @@ export const skills = [
     {
         imageUrl: css,
         name: "CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: Bootstrap,
-        name: "BootStrap",
         type: "Frontend",
     },
     {
@@ -134,19 +124,31 @@ export const skills = [
         type: "Version Control",
     },
     {
-        imageUrl: github,
-        name: "GitHub",
-        type: "Version Control",
+        imageUrl: python,
+        name: "Python",
+        type: "LLM",
+    },
+    {
+        imageUrl: pytorch,
+        name: "Pytorch",
+        type: "LLM",
     },
 ];
 
 export const projects = [
     {
-        cover: QuizGame,
-        title: "Real-Time Multiplayer Quiz Game",
-        skills: "Angular, TypeScript, Node.js, Express.js, Socket.IO(WebSocket), BootStrap, REST APIs",
-        description: "A real-time multiplayer quiz game where players can join rooms, answer timed questions, and compete with live score updates. Includes dynamic gameplay features like automatic scoring, timers, and winner detection for an interactive experience.",
-        url: "https://youtu.be/mt_QIT_4Ocs"
+        cover: ReservationProject,
+        title: "Pop-Up Restaurant Reservations",
+        skills: "Java 21, Spring Boot, Spring Security (JWT), MySQL, Thymeleaf, Docker, GitHub Actions, Azure",
+        description: "A full-stack restaurant reservation system where customers book seatings and track their status, while staff manage events, menus and tables. Built as three Spring Boot services with JWT authentication, email notifications and a shared layered architecture, containerized with Docker and deployed to Azure through a GitHub Actions CI/CD pipeline.",
+        url: "https://www.youtube.com/watch?v=2Md95Y7VZwY"
+    },
+    {
+        cover: LLM,
+        title: "LLM From Scratch",
+        skills: "Python, PyTorch, Transformer Architecture, Ollama",
+        description: "Currently building a transformer-based Large Language Model inspired by GPT-2 (124M parameters) to explore token embeddings, self-attention, and modern LLM architecture. Experimenting with local inference and project-based workflows using Ollama.",
+        url: "https://github.com/GurleenKaur655/Building-LLMs"
     },
     {
         cover: RecipeWebsite,
@@ -163,11 +165,11 @@ export const projects = [
         url: "https://github.com/GurleenKaur655/3dInteractivePortfolio"
     },
     {
-        cover: LLM,
-        title: "LLM From Scratch",
-        skills: "Python, PyTorch, Transformer Architecture, Ollama",
-        description: "Currently building a transformer-based Large Language Model inspired by GPT-2 (124M parameters) to explore token embeddings, self-attention, and modern LLM architecture. Experimenting with local inference and project-based workflows using Ollama.",
-        url: "https://github.com/GurleenKaur655/Building-LLMs"
+        cover: QuizGame,
+        title: "Real-Time Multiplayer Quiz Game",
+        skills: "Angular, TypeScript, Node.js, Express.js, Socket.IO(WebSocket), BootStrap, REST APIs",
+        description: "A real-time multiplayer quiz game where players can join rooms, answer timed questions, and compete with live score updates. Includes dynamic gameplay features like automatic scoring, timers, and winner detection for an interactive experience.",
+        url: "https://youtu.be/mt_QIT_4Ocs"
     }
 ]
 

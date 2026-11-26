@@ -10,7 +10,8 @@ const HomeInfo = ({ currentStage }) => {
         <span className='font-semibold mx-2 text-white'>Gurleen</span>
         🙋‍♀️
         <br />
-        A Software Development Student at NBCC
+       Software developer building full-stack apps and AI,
+       <br /> <span className='font-semibold mx-2 text-white'>open to new opportunities.</span>
       </h1>
     );
 
